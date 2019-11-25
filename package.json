@@ -24,9 +24,9 @@
     "lint": "ng lint && stylelint --syntax scss ./**/*.scss",
     "electron": "electron .",
     "electron:build": "ng build --prod && electron .",
-    "electron:package-OSX": "yarn run build && npx electron-packager . --platform=darwin --out=build/",
-    "electron:package-Linux": "yarn run build && npx electron-packager . --platform=linux --out=build/",
-    "electron:package-Windows": "yarn run build && npx electron-packager . --platform=win32 --out=build/"
+    "electron:package-OSX": "npm run build && npx electron-packager . --platform=darwin --out=build/",
+    "electron:package-Linux": "npm run build && npx electron-packager . --platform=linux --out=build/",
+    "electron:package-Windows": "npm run build && npx electron-packager . --platform=win32 --out=build/"
   },
   "pre-commit": "lint",
   "private": true,
