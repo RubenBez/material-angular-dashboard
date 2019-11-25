@@ -11,6 +11,7 @@
     "google material design",
     "ng"
   ],
+  "main": "main.js",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -20,7 +21,12 @@
     "tlint:fix": "ng lint --fix",
     "slint": "stylelint --syntax scss ./**/*.scss",
     "slint:fix": "stylelint --syntax scss --fix ./**/*.scss",
-    "lint": "ng lint && stylelint --syntax scss ./**/*.scss"
+    "lint": "ng lint && stylelint --syntax scss ./**/*.scss",
+    "electron": "electron .",
+    "electron:build": "ng build --prod && electron .",
+    "electron:package-OSX": "yarn run build && npx electron-packager . --platform=darwin --out=build/",
+    "electron:package-Linux": "yarn run build && npx electron-packager . --platform=linux --out=build/",
+    "electron:package-Windows": "yarn run build && npx electron-packager . --platform=win32 --out=build/"
   },
   "pre-commit": "lint",
   "private": true,
@@ -62,6 +68,8 @@
     "@types/node": "10.1.2",
     "@types/nvd3": "1.8.38",
     "codelyzer": "4.3.0",
+    "electron": "^7.1.2",
+    "electron-builder": "^21.2.0",
     "node-sass": "4.9.0",
     "pre-commit": "1.2.2",
     "stylelint": "9.2.1",
